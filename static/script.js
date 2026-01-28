@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showPopup() {
+        loginForm.reset();
         errorPopup.classList.remove('hidden');
     }
 });
