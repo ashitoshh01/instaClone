@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    gap: 40px;
+}
+
+/* LEFT PANEL (Desktop) */
+.leftPanel {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+}
+
+@media (min-width: 850px) {
+    .leftPanel {
+        display: flex;
+    }
+}
+
+.instaIconLarge {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+}
+
+.marketingText {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 40px;
+    color: #f5f5f5;
+    max-width: 400px;
+}
+
+.closeFriends {
+    font-weight: 600;
+    background: linear-gradient(90deg, #FF3269 0%, #FF7A00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.collageImage {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* RIGHT PANEL (Form) */
+.rightPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+@media (max-width: 850px) {
+    .rightPanel {
+        max-width: 100%;
+        padding: 20px;
+        align-items: center;
+    }
+}
+
+.loginCard {
+    background-color: #000000;
+    padding: 24px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #0064e0;
+    border-radius: 16px;
+}
+
+.headerTitle {
+    height: 50px;
+    margin-bottom: 24px;
+    object-fit: contain;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.input {
+    background-color: #1c1e21;
+    border: 1px solid #363636;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #0095f6;
+}
+
+.loginButton {
+    background-color: #0064e0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.loginButton:hover {
+    background-color: #005bb5;
+}
+
+.loginButton:disabled {
+    background-color: #004a94;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.forgotPassword {
+    color: #b0b3b8;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.forgotPassword:hover {
+    text-decoration: underline;
+}
+
+.facebookLoginBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border: 1px solid #363636;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+}
+
+.createAccountBtn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #0064e0;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 12px;
+    color: #0064e0;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.metaLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    color: #777;
+    font-size: 12px;
+    gap: 4px;
+}
+
+.metaText {
+    font-size: 12px;
+    color: #b0b3b8;
+}
+
+.metaVal {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Popup Error */
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popupContent {
+    background: #262626;
+    padding: 24px;
+    border-radius: 16px;
+    width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.popupTitle {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.popupMessage {
+    font-size: 15px;
+    color: #a8a8a8;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.dismissButton {
+    border-top: 1px solid #363636;
+    width: 100%;
+    padding-top: 16px;
+    color: #e0f1ff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 850px) {
+    .main {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .leftPanel {
+        display: none;
+    }
+
+    .rightPanel {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
