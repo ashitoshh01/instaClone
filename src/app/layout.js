@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Instagram",
   description: "Instagram Clone",
+  icons: {
+    icon: "/instagram_logo.jpg",
+  },
 };
 
 export default function RootLayout({ children }) {
